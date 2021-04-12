@@ -18,13 +18,13 @@ import java.util.Locale;
 public class TSTest {
     @Test
     public void getUnix() {
-        System.out.println(TimestampUtil.getMilliseconds());
+        System.out.println(TimeUtil.getMilliseconds());
     }
 
     @Test
     public void unix2Date() {
         // to Instant
-        Instant ins = Instant.ofEpochMilli(TimestampUtil.getMilliseconds());
+        Instant ins = Instant.ofEpochMilli(TimeUtil.getMilliseconds());
         ZonedDateTime zdt = ZonedDateTime.ofInstant(ins, ZoneId.of("UTC+8"));
 
 
@@ -48,7 +48,7 @@ public class TSTest {
     public void test() {
 //        System.out.println(TimestampUtil.getMilliseconds());
 
-        System.out.println(TimestampUtil.getStringDate(1605595020589L));
+        System.out.println(TimeUtil.getStringDate(1605595020589L));
 
 //        System.out.println(Instant.now().getEpochSecond());
 //        System.out.println(Instant.now().toEpochMilli());
