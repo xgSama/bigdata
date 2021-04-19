@@ -1,7 +1,5 @@
 package com.xgsama.flink.connector;
 
-import com.xgsama.flink.util.EsConnectorUtil;
-import com.xgsama.flink.util.GsonUtil;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.functions.RuntimeContext;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -10,18 +8,13 @@ import org.apache.flink.streaming.connectors.elasticsearch.ElasticsearchSinkFunc
 import org.apache.flink.streaming.connectors.elasticsearch.RequestIndexer;
 import org.apache.flink.streaming.connectors.elasticsearch7.ElasticsearchSink;
 import org.apache.http.HttpHost;
-import org.apache.kafka.common.metrics.Metrics;
 import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.client.Node;
-import org.elasticsearch.client.NodeSelector;
 import org.elasticsearch.client.Requests;
-import org.elasticsearch.common.xcontent.XContentType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 
 /**
  * ESSink
@@ -75,8 +68,6 @@ public class ESSink {
 
         });
 
-
-        esSinkBuilder.setBulkFlushMaxActions(1);
         sourceDS.addSink(esSinkBuilder.build());
 
         try {

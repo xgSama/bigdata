@@ -90,4 +90,13 @@ public abstract class BaseRichInputFormat extends RichInputFormat<Row, InputSpli
     public void setDataTransferConfig(DataTransferConfig dataTransferConfig) {
         this.dataTransferConfig = dataTransferConfig;
     }
+
+    /**
+     * Get the recover point of current channel
+     * @return DataRecoverPoint
+     */
+    public FormatState getFormatState() {
+
+        return new FormatState();
+    }
 }

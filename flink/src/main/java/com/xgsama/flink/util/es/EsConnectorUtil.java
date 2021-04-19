@@ -1,4 +1,4 @@
-package com.xgsama.flink.util;
+package com.xgsama.flink.util.es;
 
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.connectors.elasticsearch.ElasticsearchSinkFunction;

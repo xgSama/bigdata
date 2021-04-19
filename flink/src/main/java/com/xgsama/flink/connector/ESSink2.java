@@ -1,25 +1,15 @@
 package com.xgsama.flink.connector;
 
-import com.xgsama.flink.util.EsConnectorUtil;
-import com.xgsama.flink.util.GsonUtil;
+import com.xgsama.flink.util.es.EsConnectorUtil;
 import org.apache.flink.api.common.functions.MapFunction;
-import org.apache.flink.api.common.functions.RuntimeContext;
+import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.streaming.api.datastream.DataStream;
-import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.connectors.elasticsearch.ElasticsearchSinkFunction;
-import org.apache.flink.streaming.connectors.elasticsearch.RequestIndexer;
-import org.apache.flink.streaming.connectors.elasticsearch7.ElasticsearchSink;
 import org.apache.http.HttpHost;
-import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.client.Requests;
-import org.elasticsearch.common.xcontent.XContentType;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * ESSink
@@ -43,6 +33,8 @@ public class ESSink2 {
         });
 
         sourceDS.print("source");
+        TypeInformation<Sensor> type = sourceDS.getType();
+        Class<Sensor> typeClass = type.getTypeClass();
 
         List<HttpHost> httpHosts = new ArrayList<>();
         httpHosts.add(new HttpHost("dtbase", 9200, "http"));
