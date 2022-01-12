@@ -40,7 +40,7 @@ public class ReadMysql {
                 .setUsername("rds_test")
                 .setPassword("Testforuser2021")
                 .setDrivername("com.mysql.jdbc.Driver")
-                .setQuery("select * from zy_sync_flinkx_source where id >= ? and id <= ?")
+                .setQuery("select * from zy_sync_flinkx_source where id >= ? and id <= ?;")
                 .setRowTypeInfo((new RowTypeInfo(
                         BasicTypeInfo.INT_TYPE_INFO,
                         BasicTypeInfo.STRING_TYPE_INFO,
@@ -52,10 +52,8 @@ public class ReadMysql {
 
         DataStreamSource<Row> input = env.createInput(jdbcInputFormat);
 
-
         input.print();
 
         env.execute();
-
     }
 }

@@ -1,10 +1,14 @@
 package com.xgsama.flink.source;
 
+import org.apache.flink.api.common.io.FileInputFormat;
+import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
+import org.apache.flink.api.common.typeinfo.TypeInformation;
+import org.apache.flink.api.java.io.RowCsvInputFormat;
+import org.apache.flink.core.fs.Path;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import org.apache.flink.streaming.api.functions.source.FileProcessingMode;
+import org.apache.flink.types.Row;
 
 /**
  * ReadDataFromFile
@@ -17,11 +21,23 @@ public class ReadDataFromFile {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
 
-        String filePath = "/Users/xgSama/IdeaProjects/bigdata/input/sensor.txt";
+//        String filePath = "/Users/xgSama/IdeaProjects/bigdata/input/sensor.txt";
+//
+//        DataStreamSource<String> fileSource1 = env.readTextFile(filePath, "utf8");
+//        fileSource1.print();
 
-        DataStreamSource<String> fileSource1 = env.readTextFile(filePath, "utf8");
-        fileSource1.print();
+        String csvFilePath = "/Users/xgSama/IdeaProjects/bigdata/input/csv";
+        TypeInformation<?>[] types = {
+                BasicTypeInfo.INT_TYPE_INFO,
+                BasicTypeInfo.STRING_TYPE_INFO,
+                BasicTypeInfo.INT_TYPE_INFO
+        };
 
+
+        FileInputFormat<Row> rowCsvInputFormat = new RowCsvInputFormat(new Path(csvFilePath), types, "\r\n", "|");
+        DataStreamSource<Row> source = env.readFile(rowCsvInputFormat, csvFilePath, FileProcessingMode.PROCESS_CONTINUOUSLY, 10000);
+
+        source.print();
 
         env.execute();
     }
