@@ -12,8 +12,8 @@
     <artifactId>spark</artifactId>
 
     <properties>
-<!--        <spark.version>2.4.6</spark.version>-->
-        <spark.version>3.1.0</spark.version>
+        <spark.version>2.4.6</spark.version>
+<!--        <spark.version>2.1.1</spark.version>-->
         <hive.version>2.3.7</hive.version>
         <scala.binary.version>2.12</scala.binary.version>
     </properties>
@@ -57,6 +57,12 @@
             <version>${hive.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.pentaho/pentaho-aggdesigner-algorithm -->
+<!--        <dependency>-->
+<!--            <groupId>org.pentaho</groupId>-->
+<!--            <artifactId>pentaho-aggdesigner-algorithm</artifactId>-->
+<!--            <version>5.1.5-jhyde</version>-->
+<!--        </dependency>-->
 
 
 

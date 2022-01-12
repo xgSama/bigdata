@@ -90,7 +90,7 @@ object HiveReader {
         |where a.click_product_id > -1
         |""".stripMargin).createOrReplaceTempView("t1")
 
-    spark.udf.register("cityRemark", functions.udaf(new CityRemarkUDAF))
+//    spark.udf.register("cityRemark", functions.udaf(new CityRemarkUDAF))
 
 
     spark.sql(

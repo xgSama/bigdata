@@ -25,12 +25,12 @@ public class JDBCSink {
         DataStream<String> inputDS = env.readTextFile("input/sensor.txt");
 
 
-        SingleOutputStreamOperator<ESSink2.Sensor> sourceDS = inputDS.map((MapFunction<String, ESSink2.Sensor>) s -> {
-            String[] split = s.split(",");
+        SingleOutputStreamOperator<ESSink2.Sensor> sourceDS = inputDS
+                .map((MapFunction<String, ESSink2.Sensor>) s -> {
+                    String[] split = s.split(",");
 
-            return new ESSink2.Sensor(split[0].trim(), Long.parseLong(split[1].trim()), Double.parseDouble(split[2].trim()));
-        });
-
+                    return new ESSink2.Sensor(split[0].trim(), Long.parseLong(split[1].trim()), Double.parseDouble(split[2].trim()));
+                });
 
 
     }

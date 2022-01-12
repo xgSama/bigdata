@@ -12,6 +12,9 @@
         <module>java</module>
         <module>flink</module>
         <module>spark</module>
+        <module>flink-pkg110</module>
+        <module>spark_pkg</module>
+        <module>mr</module>
     </modules>
 
     <properties>
@@ -46,6 +49,20 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.20</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>2.14.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -91,6 +108,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>

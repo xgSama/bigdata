@@ -1,6 +1,7 @@
 package com.xgsama.flink.util.jdbc;
 
 import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.flink.api.common.io.DefaultInputSplitAssigner;
 import org.apache.flink.api.common.io.RichInputFormat;
 import org.apache.flink.api.common.io.statistics.BaseStatistics;
@@ -25,7 +26,7 @@ import java.util.Arrays;
  * @author xgSama
  * @date 2021/4/19 14:25
  */
-@Log4j
+@Slf4j
 public class JdbcInputFormat extends RichInputFormat<Row, InputSplit> implements ResultTypeQueryable<Row> {
 
     protected String username;

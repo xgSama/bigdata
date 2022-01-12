@@ -1,0 +1,2 @@
+{"ptfloSno":"001","appDate":"20220104","ordAmt":"10000","ptfloOpType":"0","iaInvestAgrNo":" ","cancelFlag":"0","ptfloOrdStat":"1","opertion":"INSERT","comrate":"50","staffno":"csc10001","curScale":"5000","timeS":"2022-01-04T10:00:00.000"}
+{"ptfloSno":"001","appDate":"20220104","ordAmt":"30000","ptfloOpType":"0","iaInvestAgrNo":" ","cancelFlag":"0","ptfloOrdStat":"1","opertion":"INSERT","comrate":"10","staffno":"csc10001","curScale":"5000","timeS":"2022-01-04T09:00:00.000"}

@@ -1,5 +1,6 @@
 package com.xgsama.spark.wc
 
+import com.xgsama.spark.connector.Test
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
 
