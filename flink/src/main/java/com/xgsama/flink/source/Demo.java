@@ -24,9 +24,11 @@ public class Demo {
         map.put("k1", "v1");
 
         HashSet<Integer> integers = new HashSet<>();
+        integers.add(1);
+        integers.add(2);
         SortedMap<Object, Object> objectObjectSortedMap = Collections.emptySortedMap();
 
-        env.fromCollection(integers);
+        env.fromCollection(integers).print();
         env.execute();
     }
 }

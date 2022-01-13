@@ -23,7 +23,9 @@ import java.util.UUID;
 public class Student implements Serializable {
     private int id;
     private String username;
+    private String gender;
     private String password;
+    private int age;
     private int status;
 
     public Student(int id, String username, String password, int status) {
