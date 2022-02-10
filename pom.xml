@@ -12,8 +12,7 @@
         <module>java</module>
         <module>flink</module>
         <module>spark</module>
-        <module>flink-pkg110</module>
-        <module>spark_pkg</module>
+        <module>flink110</module>
         <module>mr</module>
     </modules>
 

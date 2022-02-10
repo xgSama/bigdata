@@ -38,6 +38,7 @@ public class WordCount {
                 .keyBy((KeySelector<Tuple2<String, Integer>, Object>) value -> value.f0)
                 .sum(1);
 
+
         String executionPlan = env.getExecutionPlan();
         System.out.println(executionPlan);
         System.out.println(env);

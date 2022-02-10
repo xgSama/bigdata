@@ -19,7 +19,7 @@ import org.apache.flink.types.Row;
 public class ReadDataFromFile {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        env.setParallelism(1);
+        env.setParallelism(3);
 
 //        String filePath = "/Users/xgSama/IdeaProjects/bigdata/input/sensor.txt";
 //
@@ -36,6 +36,7 @@ public class ReadDataFromFile {
 
         FileInputFormat<Row> rowCsvInputFormat = new RowCsvInputFormat(new Path(csvFilePath), types, "\r\n", "|");
         DataStreamSource<Row> source = env.readFile(rowCsvInputFormat, csvFilePath, FileProcessingMode.PROCESS_CONTINUOUSLY, 10000);
+        source.setParallelism(1);
 
         source.print();
 
