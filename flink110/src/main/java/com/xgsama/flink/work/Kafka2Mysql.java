@@ -48,6 +48,7 @@ public class Kafka2Mysql {
         env.enableCheckpointing(10000L, CheckpointingMode.EXACTLY_ONCE);
         env.getCheckpointConfig()
                 .enableExternalizedCheckpoints(CheckpointConfig.ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
+        env.getCheckpointConfig().setMinPauseBetweenCheckpoints(60000L);
 
         Properties properties = new Properties();
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.101.50:9092,172.16.104.110:9092,172.16.104.111:9092");

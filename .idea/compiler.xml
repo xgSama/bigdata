@@ -8,15 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="flink" />
+        <module name="flink-iceberg" />
         <module name="java" />
-        <module name="flink-pkg110" />
         <module name="spark" />
-        <module name="spark_pkg" />
         <module name="mr" />
+        <module name="flink110" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="flink_pkg" target="8" />
+      <module name="spark_pkg" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

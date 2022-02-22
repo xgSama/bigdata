@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/flink_pkg/pom.xml" />
+        <option value="$PROJECT_DIR$/spark_pkg/pom.xml" />
       </set>
     </option>
   </component>

@@ -14,6 +14,7 @@
         <module>spark</module>
         <module>flink110</module>
         <module>mr</module>
+        <module>flink-iceberg</module>
     </modules>
 
     <properties>
