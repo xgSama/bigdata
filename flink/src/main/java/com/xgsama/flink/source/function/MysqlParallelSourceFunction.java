@@ -1,4 +1,4 @@
-package com.xgsama.flink.function.source;
+package com.xgsama.flink.source.function;
 
 import com.xgsama.flink.model.Student;
 import lombok.extern.slf4j.Slf4j;

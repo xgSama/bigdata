@@ -1,4 +1,4 @@
-package com.xgsama.flink.function.source;
+package com.xgsama.flink.source.function;
 
 import com.xgsama.flink.model.Student;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;

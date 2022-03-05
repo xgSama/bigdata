@@ -5,6 +5,7 @@ import org.apache.flink.api.common.state.ValueState;
 import org.apache.flink.api.common.state.ValueStateDescriptor;
 import org.apache.flink.api.common.typeinfo.TypeHint;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
+import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -34,7 +35,7 @@ public class ValueStateDemo {
                         Tuple2.of(2L, 2L),
                         Tuple2.of(2L, 2L)
                 )
-                .keyBy(0)
+                .keyBy((KeySelector<Tuple2<Long, Long>, Long>) value -> value.f0)
                 .flatMap(new CountWindowAverage()).print();
 
         env.execute();

@@ -1,11 +1,8 @@
 package com.xgsama.flink.function.source;
 
 import com.xgsama.flink.model.Student;
-import org.apache.flink.api.common.functions.MapFunction;
-import org.apache.flink.api.java.functions.KeySelector;
+import com.xgsama.flink.source.function.MysqlParallelSourceFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.datastream.KeyedStream;
-import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
 /**

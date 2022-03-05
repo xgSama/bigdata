@@ -21,6 +21,13 @@ public class PrintDemo {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
 
+        for (int i = 0; i < 100; i++) {
+            log.info("flink -- flink -- flink --");
+            log.warn("flink -- flink -- flink --");
+            log.error("flink -- flink -- flink --");
+        }
+
+
         ParameterTool parameterTool = ParameterTool.fromArgs(args);
 
         String file = "./" + parameterTool.get("file");

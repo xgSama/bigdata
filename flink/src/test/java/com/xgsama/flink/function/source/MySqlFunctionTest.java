@@ -1,6 +1,7 @@
 package com.xgsama.flink.function.source;
 
 import com.xgsama.flink.model.Student;
+import com.xgsama.flink.source.function.MysqlSourceFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
