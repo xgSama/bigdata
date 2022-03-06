@@ -43,6 +43,8 @@ public class IcebergTableDemo {
 //        tableEnv.executeSql("insert into ds_users_sink values(1, 'ss', 12)");
 
         Table table = tableEnv.sqlQuery("select * from ds_users_sink ");
+
+
         tableEnv.toAppendStream(table, Row.class).print("sink");
 
         env.execute();

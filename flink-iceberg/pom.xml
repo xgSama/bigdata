@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress MavenPackageUpdate -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -15,6 +16,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <flink.version>1.12.5</flink.version>
+        <flinkcdc.version>1.3.0</flinkcdc.version>
         <hive.version>3.1.2</hive.version>
         <hadoop.version>3.2.2</hadoop.version>
         <iceberg.version>0.13.1</iceberg.version>
@@ -33,19 +35,19 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_${scala.binary.version}</artifactId>
-            <version>1.12.5</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner-blink_${scala.binary.version}</artifactId>
-            <version>1.12.5</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
-            <version>1.12.5</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <dependency>
@@ -64,7 +66,7 @@
         <dependency>
             <groupId>com.alibaba.ververica</groupId>
             <artifactId>flink-connector-mysql-cdc</artifactId>
-            <version>1.3.0</version>
+            <version>${flinkcdc.version}</version>
         </dependency>
 
         <dependency>
