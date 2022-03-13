@@ -13,7 +13,7 @@
 
     <properties>
 <!--        <spark.version>2.4.6</spark.version>-->
-        <spark.version>2.1.3</spark.version>
+        <spark.version>2.3.1</spark.version>
         <hive.version>3.1.0</hive.version>
         <hadoop.verson>3.1.2</hadoop.verson>
         <scala.binary.version>2.11</scala.binary.version>
@@ -52,18 +52,11 @@
             <version>${spark.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-exec</artifactId>
-            <version>${hive.version}</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>${hadoop.verson}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.hadoop</groupId>-->
+<!--            <artifactId>hadoop-client</artifactId>-->
+<!--            <version>${hadoop.verson}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.pentaho/pentaho-aggdesigner-algorithm -->
 <!--        <dependency>-->
 <!--            <groupId>org.pentaho</groupId>-->
@@ -71,6 +64,11 @@
 <!--            <version>5.1.5-jhyde</version>-->
 <!--        </dependency>-->
 
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
 
     </dependencies>

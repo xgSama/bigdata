@@ -1,5 +1,6 @@
 package com.xgsama.flink.udf;
 
+import org.apache.flink.streaming.api.functions.sink.filesystem.StreamingFileSink;
 import org.apache.flink.table.functions.ScalarFunction;
 
 import java.time.Instant;
@@ -15,6 +16,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class UDFTest extends ScalarFunction {
     public String eval(String subject) {
+
 
         int length = subject == null ? 0 : subject.length();
 

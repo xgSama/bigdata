@@ -1,5 +1,6 @@
 package com.xgsama.spark.connector
 
+import lombok.extern.slf4j.Slf4j
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
@@ -16,13 +17,17 @@ object HiveReader2 {
 
     // TODO 创建环境对象
     val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("SparkSQL")
+
     val spark: SparkSession = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate()
+    spark.sparkContext.setLogLevel("DEBUG")
+
+    spark.sql("drop table if exists abc")
 
     spark.sql("create table if not exists abc(id int, name string) partitioned by (pt string)")
 
     spark.sql("insert overwrite table abc partition(pt='0303') values(1, 'sss'), (2, 'sca')")
 
-    spark.sql("select * from abc").show()
+    // spark.sql("select * from abc").show()
 
     spark.close()
   }
