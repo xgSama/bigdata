@@ -11,7 +11,14 @@
     <file url="file://$PROJECT_DIR$/hadoop/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/resources" charset="UTF-8" />
+<<<<<<< HEAD
+=======
+    <file url="file://$PROJECT_DIR$/mr/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mr/src/main/resources" charset="UTF-8" />
+>>>>>>> af018d6675a9e7e19bce87764949551f15372450
     <file url="file://$PROJECT_DIR$/spark/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spark/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
