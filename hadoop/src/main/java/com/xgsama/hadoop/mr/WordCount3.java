@@ -1,4 +1,4 @@
-package com.xgsama.mr.demo;
+package com.xgsama.hadoop.mr;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -14,12 +14,12 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /**
- * WordCount
+ * com.xgsama.hadoop.mr.WordCount
  *
  * @author : xgSama
  * @date : 2022/1/15 22:02:44
  */
-public class WordCount {
+public class WordCount3 {
 
     public static void main(String[] args) throws Exception {
         String inPath1 = "/Users/xgSama/Downloads/dtstack_ide_f239e325-e0b4-4be9-90f9-095ea03c2518.log";
@@ -27,7 +27,7 @@ public class WordCount {
         String outPath = "input/mr/wordcount";
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "word count");
-        job.setJarByClass(WordCount.class);
+        job.setJarByClass(WordCount3.class);
         job.setMapperClass(TokenizerMapper.class);
 
         job.setCombinerClass(IntSumReducer.class);

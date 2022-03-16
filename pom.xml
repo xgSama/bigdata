@@ -13,7 +13,7 @@
         <module>flink</module>
         <module>spark</module>
         <module>flink110</module>
-        <module>mr</module>
+        <module>hadoop</module>
         <module>flink-iceberg</module>
     </modules>
 

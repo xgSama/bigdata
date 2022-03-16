@@ -10,8 +10,8 @@
         <module name="flink" />
         <module name="flink-iceberg" />
         <module name="java" />
+        <module name="hadoop" />
         <module name="spark" />
-        <module name="mr" />
         <module name="flink110" />
       </profile>
     </annotationProcessing>

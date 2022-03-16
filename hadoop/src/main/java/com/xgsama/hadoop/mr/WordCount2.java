@@ -1,4 +1,4 @@
-package com.xgsama.mr.demo;
+package com.xgsama.hadoop.mr;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

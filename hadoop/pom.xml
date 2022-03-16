@@ -13,7 +13,7 @@
         <scope.type>compile</scope.type>
     </properties>
 
-    <artifactId>mr</artifactId>
+    <artifactId>hadoop</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.apache.hadoop</groupId>

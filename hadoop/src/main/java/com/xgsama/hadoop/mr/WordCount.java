@@ -1,3 +1,5 @@
+package com.xgsama.hadoop.mr;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -14,7 +16,7 @@ import java.util.StringTokenizer;
 
 
 /**
- * WordCount
+ * com.xgsama.hadoop.mr.WordCount
  *
  * @author : xgSama
  * @date : 2021/11/1 15:58:14

@@ -7,9 +7,10 @@
     <file url="file://$PROJECT_DIR$/flink/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink110/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/flink110/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hadoop/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hadoop/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mr/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mr/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spark/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spark/src/main/resources" charset="UTF-8" />
   </component>
