@@ -17,6 +17,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="flink_pkg" target="8" />
+      <module name="mr" target="8" />
       <module name="spark_pkg" target="8" />
     </bytecodeTargetLevel>
   </component>

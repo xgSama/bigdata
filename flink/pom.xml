@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress MavenPackageUpdate -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -12,7 +13,7 @@
     <artifactId>flink</artifactId>
 
     <properties>
-        <flink.version>1.12.5</flink.version>
+        <flink.version>1.12.7</flink.version>
         <hafoop.version>2.7.2</hafoop.version>
         <scala.binary.version>2.12</scala.binary.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
