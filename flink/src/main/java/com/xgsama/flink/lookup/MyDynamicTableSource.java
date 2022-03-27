@@ -4,14 +4,15 @@ import org.apache.flink.table.connector.ChangelogMode;
 import org.apache.flink.table.connector.source.DynamicTableSource;
 import org.apache.flink.table.connector.source.LookupTableSource;
 import org.apache.flink.table.connector.source.ScanTableSource;
+import org.apache.flink.table.connector.source.SourceFunctionProvider;
 
 /**
- * MyLookUpTable
+ * MyDynamicTableSource
  *
  * @author: xgsama
  * @date: 2022/3/19 21:20:17
  */
-public class MyLookUpTable implements LookupTableSource, ScanTableSource {
+public class MyDynamicTableSource implements LookupTableSource, ScanTableSource {
     @Override
     public LookupRuntimeProvider getLookupRuntimeProvider(LookupContext lookupContext) {
         return null;
@@ -34,6 +35,6 @@ public class MyLookUpTable implements LookupTableSource, ScanTableSource {
 
     @Override
     public ScanRuntimeProvider getScanRuntimeProvider(ScanContext scanContext) {
-        return null;
+        return SourceFunctionProvider.of(null, false);
     }
 }
