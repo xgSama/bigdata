@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress MavenPackageUpdate -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -15,53 +16,31 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <flink.version>1.12.7</flink.version>
-                <scope.type>provided</scope.type>
-<!--        <scope.type>compile</scope.type>-->
-<!--        <flink.scope>compile</flink.scope>-->
-                <flink.scope>provided</flink.scope>
+        <flink.scope>provided</flink.scope>
     </properties>
 
     <dependencies>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-json</artifactId>
-            <version>${flink.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_2.12</artifactId>
             <version>${flink.version}</version>
-            <scope>${scope.type}</scope>
+            <scope>${flink.scope}</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-api-java</artifactId>
+            <artifactId>flink-table-api-java-bridge_2.12</artifactId>
             <version>${flink.version}</version>
-            <scope>${scope.type}</scope>
+            <scope>${flink.scope}</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine -->
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>caffeine</artifactId>
-            <version>2.9.2</version>
-            <scope>provided</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner-blink_2.12</artifactId>
             <version>${flink.version}</version>
-            <scope>${scope.type}</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-jdbc_2.11</artifactId>
-            <version>1.10.1</version>
+            <scope>${flink.scope}</scope>
         </dependency>
 
 
@@ -69,21 +48,19 @@
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.12</artifactId>
             <version>${flink.version}</version>
-            <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.47</version>
-            <scope>${flink.scope}</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.apache.logging.log4j</groupId>-->
-<!--            <artifactId>log4j-slf4j-impl</artifactId>-->
-<!--            <scope>${scope.type}</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <scope>${flink.scope}</scope>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -101,9 +78,8 @@
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table-api-java-bridge_2.12</artifactId>
-            <version>${flink.version}</version>
-            <scope>${scope.type}</scope>
+            <artifactId>flink-core</artifactId>
+            <version>1.12.7</version>
         </dependency>
     </dependencies>
 

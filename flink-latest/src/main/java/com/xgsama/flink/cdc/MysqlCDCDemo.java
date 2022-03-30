@@ -18,7 +18,6 @@ public class MysqlCDCDemo {
         env.enableCheckpointing(5000L);
 
         EnvironmentSettings settings = EnvironmentSettings.newInstance()
-                .useBlinkPlanner()
                 .inStreamingMode()
                 .build();
 

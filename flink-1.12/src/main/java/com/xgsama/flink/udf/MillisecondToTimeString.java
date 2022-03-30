@@ -15,11 +15,11 @@ import java.time.format.DateTimeFormatter;
  */
 public class MillisecondToTimeString extends ScalarFunction {
 
-    public String eval(long millisecond) {
+    public String eval(Long millisecond) {
         return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(LocalDateTime.ofInstant(Instant.ofEpochMilli(millisecond), ZoneId.of("Asia/Shanghai")));
     }
 
-    public String eval(long millisecond, String pattern) {
+    public String eval(Long millisecond, String pattern) {
         return DateTimeFormatter.ofPattern(pattern).format(LocalDateTime.ofInstant(Instant.ofEpochMilli(millisecond), ZoneId.of("Asia/Shanghai")));
     }
 
