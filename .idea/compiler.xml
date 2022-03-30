@@ -7,17 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="flink" />
-        <module name="flink-iceberg" />
+        <module name="iceberg" />
+        <module name="flink-1.12" />
         <module name="java" />
         <module name="hadoop" />
         <module name="spark" />
-        <module name="flink110" />
+        <module name="flink-latest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="flink_pkg" target="8" />
-      <module name="mr" target="8" />
       <module name="spark_pkg" target="8" />
     </bytecodeTargetLevel>
   </component>

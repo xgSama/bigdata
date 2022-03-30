@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="flink,flink-func,flink-iceberg,flink-pkg,flink-pkg110,flink110,iceberg,spark" />
+    <profile name="Maven 1" modules="flink,flink-1.12,flink-func,flink-iceberg,flink-latest,flink-pkg,flink-pkg110,flink110,iceberg,spark" />
   </component>
 </project>

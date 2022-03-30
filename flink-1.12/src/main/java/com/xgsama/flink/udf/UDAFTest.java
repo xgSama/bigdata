@@ -1,6 +1,5 @@
 package com.xgsama.flink.udf;
 
-import org.apache.flink.api.common.accumulators.LongCounter;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.table.functions.AggregateFunction;
 

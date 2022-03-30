@@ -10,11 +10,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>java</module>
-        <module>flink</module>
+        <module>flink-1.12</module>
+        <module>flink-latest</module>
         <module>spark</module>
-        <module>flink110</module>
         <module>hadoop</module>
-        <module>flink-iceberg</module>
+        <module>iceberg</module>
     </modules>
 
     <properties>

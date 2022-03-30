@@ -31,12 +31,14 @@ public class BorrowBook {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime);
+        env.setParallelism(1);
+
+
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "172.16.100.109:9092");
         properties.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         properties.setProperty("auto.offset.reset", "earliest");
-
 
         DataStreamSource<Tuple4<Long, Long, Long, Long>> recordSource =
                 env.addSource(new FlinkKafkaConsumer<>(

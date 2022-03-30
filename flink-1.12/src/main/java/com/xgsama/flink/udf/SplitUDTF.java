@@ -3,9 +3,15 @@ package com.xgsama.flink.udf;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.api.java.typeutils.RowTypeInfo;
+import org.apache.flink.table.api.DataTypes;
+import org.apache.flink.table.catalog.DataTypeFactory;
 import org.apache.flink.table.functions.FunctionContext;
 import org.apache.flink.table.functions.TableFunction;
+import org.apache.flink.table.types.DataType;
+import org.apache.flink.table.types.inference.TypeInference;
 import org.apache.flink.types.Row;
+
+import java.util.Optional;
 
 /**
  * SplitUDTF
@@ -31,11 +37,23 @@ public class SplitUDTF extends TableFunction<Row> {
     }
 
 
-    @Override
-    public TypeInformation<Row> getResultType() {
-        return new RowTypeInfo(Types.STRING, Types.STRING);
-    }
+//    @Override
+//    public TypeInformation<Row> getResultType() {
+//        return new RowTypeInfo(Types.STRING, Types.STRING);
+//    }
 
+    @Override
+    public TypeInference getTypeInference(DataTypeFactory typeFactory) {
+        DataType dataType =
+                DataTypes.ROW(
+                        DataTypes.FIELD("col1", DataTypes.STRING()),
+                        DataTypes.FIELD("clo2", DataTypes.STRING())
+                );
+
+        return TypeInference.newBuilder()
+                .outputTypeStrategy(callContext -> Optional.of(dataType))
+                .build();
+    }
 
     @Override
     public void close() throws Exception {
