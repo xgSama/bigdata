@@ -1,4 +1,4 @@
-package com.xgsama.flink.udf;
+package com.xgsama.flink.func.udtf;
 
 import org.apache.flink.api.common.typeinfo.TypeInformation;
 import org.apache.flink.api.common.typeinfo.Types;

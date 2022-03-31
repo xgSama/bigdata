@@ -1,4 +1,4 @@
-package com.xgsama.flink.udf;
+package com.xgsama.flink.func.udf;
 
 import org.apache.flink.table.functions.ScalarFunction;
 
