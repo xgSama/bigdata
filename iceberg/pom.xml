@@ -35,32 +35,32 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner-blink_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-json</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <!-- Flink  Connector -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-hive_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <dependency>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.12</artifactId>
-            <version>${flink.version}</version>
+            <version>${flink-112.version}</version>
         </dependency>
 
         <!-- Hadoop -->

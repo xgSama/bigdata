@@ -22,6 +22,8 @@
         <kafka.version>2.5.0</kafka.version>
         <junit.version>4.13</junit.version>
         <fastjson.version>1.2.68</fastjson.version>
+        <flink-112.version>1.12.7</flink-112.version>
+        <flink-latest.version>1.14.4</flink-latest.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

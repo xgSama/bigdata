@@ -21,6 +21,7 @@
 
     <dependencies>
 
+        <!-- Flink Dist -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_2.12</artifactId>
@@ -35,21 +36,30 @@
             <scope>${flink.scope}</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-table-planner-blink_2.12</artifactId>
             <version>${flink.version}</version>
             <scope>${flink.scope}</scope>
         </dependency>
+        <!-- Flink Dist End -->
 
 
+        <!-- Flink Connector -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-connector-kafka_2.12</artifactId>
             <version>${flink.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-jdbc_2.12</artifactId>
+            <version>${flink.version}</version>
+        </dependency>
+        <!-- Flink Connector End -->
+
+        <!-- Others -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -76,11 +86,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-core</artifactId>
-            <version>1.12.7</version>
-        </dependency>
+
     </dependencies>
 
 </project>
