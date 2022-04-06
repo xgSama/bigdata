@@ -42,6 +42,14 @@
             <version>${flink.version}</version>
             <scope>${flink.scope}</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-python_2.12</artifactId>
+            <version>${flink.version}</version>
+            <scope>${flink.scope}</scope>
+        </dependency>
+
         <!-- Flink Dist End -->
 
 
