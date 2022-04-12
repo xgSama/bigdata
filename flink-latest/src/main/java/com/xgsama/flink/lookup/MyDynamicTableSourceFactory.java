@@ -1,9 +1,7 @@
 package com.xgsama.flink.lookup;
 
 import org.apache.flink.configuration.ConfigOption;
-import org.apache.flink.configuration.ConfigOptions;
 import org.apache.flink.configuration.ReadableConfig;
-import org.apache.flink.connector.jdbc.internal.options.JdbcOptions;
 import org.apache.flink.table.api.TableSchema;
 import org.apache.flink.table.connector.source.DynamicTableSource;
 import org.apache.flink.table.factories.DynamicTableSourceFactory;

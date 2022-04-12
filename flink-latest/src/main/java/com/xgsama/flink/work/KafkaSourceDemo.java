@@ -1,20 +1,18 @@
 package com.xgsama.flink.work;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
-import org.apache.flink.api.common.serialization.SimpleStringEncoder;
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.api.common.typeinfo.BasicTypeInfo;
 import org.apache.flink.api.common.typeinfo.TypeInformation;
-import org.apache.flink.api.java.typeutils.RowTypeInfo;
 import org.apache.flink.connector.kafka.source.KafkaSource;
 import org.apache.flink.connector.kafka.source.enumerator.initializer.OffsetsInitializer;
-import org.apache.flink.connector.kafka.source.reader.deserializer.KafkaRecordDeserializer;
+import org.apache.flink.connector.kafka.source.reader.deserializer.KafkaRecordDeserializationSchema;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.util.Collector;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.common.serialization.StringDeserializer;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -35,10 +33,10 @@ public class KafkaSourceDemo {
                 .setGroupId("MyGroup")
                 .setTopics(Collections.singletonList("test"))
                 .setStartingOffsets(OffsetsInitializer.earliest())
-                .setDeserializer(new KafkaRecordDeserializer<String>() {
+                .setDeserializer(new KafkaRecordDeserializationSchema<String>() {
                     @Override
-                    public void deserialize(ConsumerRecord<byte[], byte[]> record, Collector<String> collector) throws Exception {
-                        collector.collect(new String(record.value(), StandardCharsets.UTF_8));
+                    public void deserialize(ConsumerRecord<byte[], byte[]> record, Collector<String> out) throws IOException {
+                        out.collect(new String(record.value(), StandardCharsets.UTF_8));
                     }
 
                     @Override
@@ -46,6 +44,7 @@ public class KafkaSourceDemo {
                         return BasicTypeInfo.STRING_TYPE_INFO;
                     }
                 })
+//                .setValueOnlyDeserializer(new SimpleStringSchema())
                 .build();
 
         env.fromSource(source, WatermarkStrategy.noWatermarks(), "Kafka Source").print();

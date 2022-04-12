@@ -1,11 +1,18 @@
 package com.xgsama.flink.sql;
 
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.api.common.typeinfo.Types;
+import org.apache.flink.api.java.functions.FormattingMapper;
 import org.apache.flink.api.java.tuple.Tuple4;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.EnvironmentSettings;
+import org.apache.flink.table.api.Schema;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
+import org.apache.flink.table.types.AbstractDataType;
+import org.apache.flink.types.Row;
 
 import java.sql.Timestamp;
 import java.time.Duration;
@@ -27,8 +34,9 @@ public class WindowDemo {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
 
-        EnvironmentSettings settings = EnvironmentSettings.newInstance()
-                .useBlinkPlanner()
+        EnvironmentSettings settings = EnvironmentSettings
+                .newInstance()
+                // .useBlinkPlanner() Flink 1.14 中移除了旧的规划器，现在只剩Blink了
                 .inStreamingMode()
                 .build();
         StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env, settings);
@@ -45,18 +53,17 @@ public class WindowDemo {
                                 context -> (element, recordTimestamp) -> element.f3.getTime());
 
         DataStreamSource<Tuple4<String, String, Double, Timestamp>> source = env.fromCollection(orders);
+
+
         source.assignTimestampsAndWatermarks(
                 WatermarkStrategy
                         .<Tuple4<String, String, Double, Timestamp>>forBoundedOutOfOrderness(Duration.ofSeconds(3L))
                         .withTimestampAssigner(watermarkStrategy));
 
-
-        tableEnv.createTemporaryView("users", source,
-                $("user"),
-                $("product"),
-                $("amount"),
-                $("rowtime").rowtime(),
-                $("proctime").proctime());
+        tableEnv.createTemporaryView(
+                "users",
+                source
+        );
 
 
         tableEnv.executeSql("select * from users").print();
